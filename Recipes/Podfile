@@ -1,0 +1,23 @@
+# Uncomment the next line to define a global platform for your project
+# platform :ios, '12.0'
+
+target 'Recipes' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Add your pods for the main target here
+  pod 'Alamofire', '~> 5.0' # Specify the desired version
+
+  target 'RecipesTests' do
+    # Inherit search paths from the parent target
+    inherit! :search_paths
+
+    # Add your testing-related pods here
+    # pod 'SomeTestingPod', '~> x.y.z'
+  end
+
+  target 'RecipesUITests' do
+    # Add your UI testing-related pods here
+    # pod 'SomeUITestingPod', '~> x.y.z'
+  end
+end

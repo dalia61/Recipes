@@ -1,0 +1,69 @@
+type_name:
+  validates_start_with_lowercase: true
+  max_length: 200
+identifier_name:
+  excluded: ["id"]
+  validates_start_with_lowercase: true
+  min_length: 2
+  
+file_length:
+  warning: 400
+  error: 800
+
+line_length:
+  warning: 120
+  error: 200
+  ignore_urls: true
+  ignores_function_declarations: true
+  ignores_comments: false
+  
+force_cast: error
+
+force_try:
+  severity: warning # explicitly
+
+shorthand_operator: warning
+
+type_body_length:
+  warning: 250
+  error: 350
+
+function_parameter_count:
+  warning: 7
+  error: 8
+  ignores_default_parameters: true
+  
+large_tuple:
+  warning: 2
+  error: 3
+
+cyclomatic_complexity:
+  ignores_case_statements: true
+  warning: 10
+  error: 20
+
+
+function_body_length:
+  warning: 50
+  error: 100
+
+
+trailing_comma:
+  severity: error
+
+large_tuple:
+  warning: 3
+  error: 5
+  
+colon:
+  severity: error
+  
+trailing_semicolon:
+  severity: error
+
+trailing_whitespace:
+  severity: error
+  
+
+excluded:
+  - Pods
