@@ -31,6 +31,14 @@
 		2BC683892A85886000A9286A /* RecipesDetailsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BC683872A85886000A9286A /* RecipesDetailsViewController.xib */; };
 		2BC6838B2A85887F00A9286A /* RecipesDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6838A2A85887F00A9286A /* RecipesDetailsModel.swift */; };
 		2BC6838D2A85888F00A9286A /* RecipesDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC6838C2A85888F00A9286A /* RecipesDetailsViewModel.swift */; };
+		2BD2EB992A85A1660083B7E4 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2EB972A85A1660083B7E4 /* OnboardingViewController.swift */; };
+		2BD2EB9A2A85A1660083B7E4 /* OnboardingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2BD2EB982A85A1660083B7E4 /* OnboardingViewController.xib */; };
+		2BD2EB9C2A85A17A0083B7E4 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2EB9B2A85A17A0083B7E4 /* OnboardingModel.swift */; };
+		2BD2EB9E2A85A1860083B7E4 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2EB9D2A85A1860083B7E4 /* OnboardingViewModel.swift */; };
+		2BD2EBA02A85A1E40083B7E4 /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2EB9F2A85A1E40083B7E4 /* OnboardingCoordinator.swift */; };
+		2BD2EBA22A85A1FC0083B7E4 /* RecipesDetailsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2EBA12A85A1FC0083B7E4 /* RecipesDetailsCoordinator.swift */; };
+		2BD2EBA42A85A2170083B7E4 /* RecipesListCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2EBA32A85A2170083B7E4 /* RecipesListCoordinator.swift */; };
+		2BD2EBA62A85A2710083B7E4 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BD2EBA52A85A2710083B7E4 /* LoginCoordinator.swift */; };
 		6B5DCC69E58D5D268B453881 /* Pods_Recipes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5CECE06FF88EFB2F5FDD0B88 /* Pods_Recipes.framework */; };
 		BBFE20FC58067D8914D3C84E /* Pods_Recipes_RecipesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C30171C9E06D7DB2E92DB45A /* Pods_Recipes_RecipesUITests.framework */; };
 		DD235E597F17B98B6333C8A7 /* Pods_RecipesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 020834B69270E4AE9488A259 /* Pods_RecipesTests.framework */; };
@@ -85,6 +93,14 @@
 		2BC683872A85886000A9286A /* RecipesDetailsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipesDetailsViewController.xib; sourceTree = "<group>"; };
 		2BC6838A2A85887F00A9286A /* RecipesDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailsModel.swift; sourceTree = "<group>"; };
 		2BC6838C2A85888F00A9286A /* RecipesDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailsViewModel.swift; sourceTree = "<group>"; };
+		2BD2EB972A85A1660083B7E4 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		2BD2EB982A85A1660083B7E4 /* OnboardingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OnboardingViewController.xib; sourceTree = "<group>"; };
+		2BD2EB9B2A85A17A0083B7E4 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
+		2BD2EB9D2A85A1860083B7E4 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		2BD2EB9F2A85A1E40083B7E4 /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
+		2BD2EBA12A85A1FC0083B7E4 /* RecipesDetailsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesDetailsCoordinator.swift; sourceTree = "<group>"; };
+		2BD2EBA32A85A2170083B7E4 /* RecipesListCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListCoordinator.swift; sourceTree = "<group>"; };
+		2BD2EBA52A85A2710083B7E4 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		5CECE06FF88EFB2F5FDD0B88 /* Pods_Recipes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Recipes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC54AC809D44B2B789C51844 /* Pods-Recipes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes.release.xcconfig"; path = "Target Support Files/Pods-Recipes/Pods-Recipes.release.xcconfig"; sourceTree = "<group>"; };
 		B98867CC0E5EFD3CCECA3601 /* Pods-Recipes-RecipesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes-RecipesUITests.release.xcconfig"; path = "Target Support Files/Pods-Recipes-RecipesUITests/Pods-Recipes-RecipesUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -266,6 +282,7 @@
 		2BC683672A857ECE00A9286A /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				2BD2EB932A85A0FA0083B7E4 /* Onboarding */,
 				2BC6836A2A857FA000A9286A /* RecipesDetails */,
 				2BC683692A857F8900A9286A /* RecipesList */,
 				2BC683682A857F7E00A9286A /* Login */,
@@ -279,6 +296,7 @@
 				2BC683732A85804400A9286A /* View */,
 				2BC683722A85803F00A9286A /* Model */,
 				2BC683712A85803600A9286A /* ViewModel */,
+				2BD2EBA52A85A2710083B7E4 /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -289,6 +307,7 @@
 				2BC683702A85802C00A9286A /* View */,
 				2BC6836F2A85802600A9286A /* Model */,
 				2BC6836E2A85801E00A9286A /* ViewModel */,
+				2BD2EBA32A85A2170083B7E4 /* RecipesListCoordinator.swift */,
 			);
 			path = RecipesList;
 			sourceTree = "<group>";
@@ -299,6 +318,7 @@
 				2BC6836C2A857FD800A9286A /* View */,
 				2BC6836B2A857FCF00A9286A /* Model */,
 				2BC6836D2A857FE000A9286A /* ViewModel */,
+				2BD2EBA12A85A1FC0083B7E4 /* RecipesDetailsCoordinator.swift */,
 			);
 			path = RecipesDetails;
 			sourceTree = "<group>";
@@ -376,6 +396,42 @@
 				2BC683752A8580AF00A9286A /* LoginViewController.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2BD2EB932A85A0FA0083B7E4 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2BD2EB962A85A1550083B7E4 /* ViewModel */,
+				2BD2EB952A85A14F0083B7E4 /* Model */,
+				2BD2EB942A85A1400083B7E4 /* View */,
+				2BD2EB9F2A85A1E40083B7E4 /* OnboardingCoordinator.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2BD2EB942A85A1400083B7E4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2BD2EB972A85A1660083B7E4 /* OnboardingViewController.swift */,
+				2BD2EB982A85A1660083B7E4 /* OnboardingViewController.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2BD2EB952A85A14F0083B7E4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2BD2EB9B2A85A17A0083B7E4 /* OnboardingModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2BD2EB962A85A1550083B7E4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2BD2EB9D2A85A1860083B7E4 /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		7CEC5CF4C62C58B69CF16447 /* Frameworks */ = {
@@ -502,6 +558,7 @@
 				2BC683892A85886000A9286A /* RecipesDetailsViewController.xib in Resources */,
 				2BC6831D2A85771800A9286A /* Assets.xcassets in Resources */,
 				2BC683772A8580AF00A9286A /* LoginViewController.xib in Resources */,
+				2BD2EB9A2A85A1660083B7E4 /* OnboardingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -630,8 +687,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2BC683572A85792200A9286A /* AppCoordinator.swift in Sources */,
+				2BD2EBA02A85A1E40083B7E4 /* OnboardingCoordinator.swift in Sources */,
 				2BC683832A85878C00A9286A /* RecipesListModel.swift in Sources */,
 				2BC683642A857B7700A9286A /* NetworkError.swift in Sources */,
+				2BD2EB992A85A1660083B7E4 /* OnboardingViewController.swift in Sources */,
 				2BC6838B2A85887F00A9286A /* RecipesDetailsModel.swift in Sources */,
 				2BC683882A85886000A9286A /* RecipesDetailsViewController.swift in Sources */,
 				2BC6838D2A85888F00A9286A /* RecipesDetailsViewModel.swift in Sources */,
@@ -640,8 +699,13 @@
 				2BC683762A8580AF00A9286A /* LoginViewController.swift in Sources */,
 				2BC6837B2A85874800A9286A /* LoginModel.swift in Sources */,
 				2BC6835E2A857B3A00A9286A /* Constatns.swift in Sources */,
+				2BD2EB9E2A85A1860083B7E4 /* OnboardingViewModel.swift in Sources */,
 				2BC683602A857B4800A9286A /* Endpoint.swift in Sources */,
 				2BC683852A85879C00A9286A /* RecipesListViewModel.swift in Sources */,
+				2BD2EBA42A85A2170083B7E4 /* RecipesListCoordinator.swift in Sources */,
+				2BD2EBA62A85A2710083B7E4 /* LoginCoordinator.swift in Sources */,
+				2BD2EB9C2A85A17A0083B7E4 /* OnboardingModel.swift in Sources */,
+				2BD2EBA22A85A1FC0083B7E4 /* RecipesDetailsCoordinator.swift in Sources */,
 				2BC683162A85771400A9286A /* SceneDelegate.swift in Sources */,
 				2BC683802A85877C00A9286A /* RecipesListViewController.swift in Sources */,
 				2BC683792A85873400A9286A /* LoginViewModel.swift in Sources */,
