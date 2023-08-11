@@ -51,8 +51,8 @@ to cook better food!</string>
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lK-13-p3p">
-                                    <rect key="frame" x="25" y="754" width="380" height="55"/>
+                                <button opaque="NO" contentMode="center" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9lK-13-p3p">
+                                    <rect key="frame" x="25" y="709" width="380" height="55"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="55" id="pCy-y3-IqS"/>
                                     </constraints>
@@ -76,7 +76,7 @@ to cook better food!</string>
                                 <constraint firstAttribute="trailing" secondItem="9lK-13-p3p" secondAttribute="trailing" constant="25" id="IWu-vd-tBw"/>
                                 <constraint firstAttribute="trailing" secondItem="rOc-RK-7NC" secondAttribute="trailing" constant="50" id="KUP-K3-zIs"/>
                                 <constraint firstAttribute="trailing" secondItem="PU4-5t-Kl3" secondAttribute="trailing" id="NUz-dg-J74"/>
-                                <constraint firstAttribute="bottom" secondItem="9lK-13-p3p" secondAttribute="bottom" constant="30" id="cqL-H6-eWq"/>
+                                <constraint firstAttribute="bottom" secondItem="9lK-13-p3p" secondAttribute="bottom" constant="75" id="cqL-H6-eWq"/>
                                 <constraint firstItem="PU4-5t-Kl3" firstAttribute="leading" secondItem="XXI-S1-bOj" secondAttribute="leading" id="fBS-6H-9Ae"/>
                                 <constraint firstItem="rOc-RK-7NC" firstAttribute="top" secondItem="PU4-5t-Kl3" secondAttribute="bottom" constant="30" id="t8O-S9-g0F"/>
                                 <constraint firstItem="rOc-RK-7NC" firstAttribute="leading" secondItem="XXI-S1-bOj" secondAttribute="leading" constant="50" id="vyI-4h-Frw"/>
