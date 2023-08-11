@@ -32,8 +32,8 @@
                                         <constraint firstAttribute="height" constant="400" id="ctS-X2-xAf"/>
                                     </constraints>
                                 </imageView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="rOc-RK-7NC">
-                                    <rect key="frame" x="50" y="425" width="330" height="104"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rOc-RK-7NC">
+                                    <rect key="frame" x="50" y="430" width="330" height="114"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Cooking" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o9H-Jq-f5C">
                                             <rect key="frame" x="0.0" y="0.0" width="330" height="36"/>
@@ -42,11 +42,11 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybZ-Hu-EZ7">
-                                            <rect key="frame" x="0.0" y="56" width="330" height="48"/>
+                                            <rect key="frame" x="0.0" y="66" width="330" height="48"/>
                                             <string key="text">Let’s join our community
 to cook better food!</string>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
-                                            <color key="textColor" systemColor="systemGray2Color"/>
+                                            <color key="textColor" systemColor="systemGrayColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
@@ -58,7 +58,7 @@ to cook better food!</string>
                                     </constraints>
                                     <color key="tintColor" red="0.12156862745098039" green="0.80000000000000004" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="filled" title="Get Started" titleAlignment="center">
+                                    <buttonConfiguration key="configuration" style="filled" title="Get Started" cornerStyle="capsule" titleAlignment="center">
                                         <fontDescription key="titleFontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="20"/>
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="baseBackgroundColor" red="0.12156862745098039" green="0.80000000000000004" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -78,7 +78,7 @@ to cook better food!</string>
                                 <constraint firstAttribute="trailing" secondItem="PU4-5t-Kl3" secondAttribute="trailing" id="NUz-dg-J74"/>
                                 <constraint firstAttribute="bottom" secondItem="9lK-13-p3p" secondAttribute="bottom" constant="30" id="cqL-H6-eWq"/>
                                 <constraint firstItem="PU4-5t-Kl3" firstAttribute="leading" secondItem="XXI-S1-bOj" secondAttribute="leading" id="fBS-6H-9Ae"/>
-                                <constraint firstItem="rOc-RK-7NC" firstAttribute="top" secondItem="PU4-5t-Kl3" secondAttribute="bottom" constant="25" id="t8O-S9-g0F"/>
+                                <constraint firstItem="rOc-RK-7NC" firstAttribute="top" secondItem="PU4-5t-Kl3" secondAttribute="bottom" constant="30" id="t8O-S9-g0F"/>
                                 <constraint firstItem="rOc-RK-7NC" firstAttribute="leading" secondItem="XXI-S1-bOj" secondAttribute="leading" constant="50" id="vyI-4h-Frw"/>
                             </constraints>
                         </view>
@@ -109,8 +109,8 @@ to cook better food!</string>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGray2Color">
-            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
