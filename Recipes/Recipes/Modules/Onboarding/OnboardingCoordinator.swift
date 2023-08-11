@@ -19,9 +19,8 @@ final class OnboardingCoordinator: Coordinator {
     }
     func start() {
         let onBoardingViewModel = OnboardingViewModel(coordinator: self)
-        let onBoardingViewControoler = OnboardingViewController()
-        //navigationController.navigationBar.isHidden = true
-        navigationController.setViewControllers([onBoardingViewControoler], animated: false) //true
+        let onBoardingViewControoler = OnboardingViewController(viewModel: onBoardingViewModel)
+        navigationController.setViewControllers([onBoardingViewControoler], animated: false)
     }
 }
 
