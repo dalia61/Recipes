@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class OnboardingViewModel{
+    private let coordinator: OnboardingCoordinatorProtocol
+    init(coordinator: OnboardingCoordinatorProtocol) {
+        self.coordinator = coordinator
+    }
+    
+}
