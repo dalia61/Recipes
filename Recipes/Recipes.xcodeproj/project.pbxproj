@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2B7DA2922A86F43500368A9A /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B7DA2912A86F43500368A9A /* UITextField.swift */; };
 		2BC683142A85771400A9286A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC683132A85771400A9286A /* AppDelegate.swift */; };
 		2BC683162A85771400A9286A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BC683152A85771400A9286A /* SceneDelegate.swift */; };
 		2BC6831D2A85771800A9286A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2BC6831C2A85771800A9286A /* Assets.xcassets */; };
@@ -65,6 +66,7 @@
 		004DFFA9AAC12D5EE9DFAE72 /* Pods-RecipesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecipesTests.debug.xcconfig"; path = "Target Support Files/Pods-RecipesTests/Pods-RecipesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		020834B69270E4AE9488A259 /* Pods_RecipesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RecipesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		15EC652F1E999FBA72917B2A /* Pods-Recipes-RecipesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes-RecipesUITests.debug.xcconfig"; path = "Target Support Files/Pods-Recipes-RecipesUITests/Pods-Recipes-RecipesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		2B7DA2912A86F43500368A9A /* UITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		2BC683102A85771400A9286A /* Recipes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Recipes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2BC683132A85771400A9286A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2BC683152A85771400A9286A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -243,6 +245,7 @@
 		2BC6835B2A857AA900A9286A /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2B7DA2912A86F43500368A9A /* UITextField.swift */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -697,6 +700,7 @@
 				2BC683142A85771400A9286A /* AppDelegate.swift in Sources */,
 				2BC683622A857B5E00A9286A /* NetworkManager.swift in Sources */,
 				2BC683762A8580AF00A9286A /* LoginViewController.swift in Sources */,
+				2B7DA2922A86F43500368A9A /* UITextField.swift in Sources */,
 				2BC6837B2A85874800A9286A /* LoginModel.swift in Sources */,
 				2BC6835E2A857B3A00A9286A /* Constatns.swift in Sources */,
 				2BD2EB9E2A85A1860083B7E4 /* OnboardingViewModel.swift in Sources */,
