@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 protocol LoginCoordinatorProtocol: AnyObject {
+    func navigateToRecipesList()
 }
 final class LoginCoordinator: Coordinator {
     let navigationController: UINavigationController
@@ -16,8 +17,15 @@ final class LoginCoordinator: Coordinator {
     }
     func start() {
         let loginViewController = LoginViewController()
+        let loginViewModel = LoginViewModel(coordinator: self, viewModelOutput: loginViewController)
+        loginViewController.viewModel = loginViewModel
+        navigationController.navigationBar.tintColor = .black
         navigationController.pushViewController(loginViewController, animated: true)
     }
 }
 extension LoginCoordinator: LoginCoordinatorProtocol {
+    func navigateToRecipesList() {
+        /*let recipesListCoordinator = RecipesListCoordinator (navigationController:navigationController)
+        recipesListCoordinator.start()*/
+    }
 }
