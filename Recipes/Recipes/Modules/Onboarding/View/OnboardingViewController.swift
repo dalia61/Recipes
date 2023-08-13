@@ -10,7 +10,6 @@ import UIKit
 class OnboardingViewController: UIViewController {
     @IBOutlet weak var GetStartButton: UIButton!
     private let viewModel: OnboardingViewModel
-    
     init(viewModel: OnboardingViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
