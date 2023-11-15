@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 protocol RecipesListCoordinatorProtocol: AnyObject {
-    //func navigateToRecipesDetails(with recipe: Recipe)
+    func navigateToRecipesDetails(with recipe: Recipe)
 }
-final class RecipesListCoordinator: Coordinator {
+class RecipesListCoordinator: Coordinator {
     let navigationController: UINavigationController
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -25,8 +25,6 @@ final class RecipesListCoordinator: Coordinator {
     }
 }
 extension RecipesListCoordinator: RecipesListCoordinatorProtocol {
-    func navigateToRecipesDetails() {
-        /*let recipesDetailsCoordinator = RecipesDetailsCoordinator (navigationController:navigationController)
-        recipesDetailsCoordinator.start()*/
+    func navigateToRecipesDetails(with recipe: Recipe) {
     }
 }

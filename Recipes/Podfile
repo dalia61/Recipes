@@ -7,6 +7,7 @@ target 'Recipes' do
 
   # Add your pods for the main target here
   pod 'Alamofire', '~> 5.0' # Specify the desired version
+  pod 'Kingfisher'
 
   target 'RecipesTests' do
     # Inherit search paths from the parent target

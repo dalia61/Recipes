@@ -7,16 +7,20 @@
 
 import Foundation
 
-class RecipesListViewModel{
+class RecipesListViewModel {
     private let coordinator: RecipesListCoordinatorProtocol
     var reloadTableView: (() -> Void)?
+    
     init(coordinator: RecipesListCoordinatorProtocol) {
         self.coordinator = coordinator
     }
-    var recipeCellViewModel = [RecipeCellViewModel]() {
+    
+    var recipes = [Recipe]() {
         didSet {
             reloadTableView?()
         }
     }
-
+    
+    func fetchRecipes() {
+    }
 }
