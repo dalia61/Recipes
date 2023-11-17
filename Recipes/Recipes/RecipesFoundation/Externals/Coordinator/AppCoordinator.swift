@@ -26,7 +26,7 @@ final class AppCoordinator {
 private extension AppCoordinator {
     func displayOnboardingFlow() {
         let navigationController = UINavigationController()
-        let coordinator = OnboardingCoordinator(navigationController: navigationController)
+        let coordinator = RecipesListCoordinator(navigationController: navigationController)
         coordinator.start()
         children.append(coordinator)
         replaceRootViewController(navigationController)

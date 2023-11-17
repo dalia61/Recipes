@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RecipesViewController" customModule="Recipes" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="kU0-uP-anq" id="VsJ-Js-1RP"/>
                 <outlet property="recipesTableView" destination="A7p-ow-Ant" id="bUt-A9-Cyd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="wPY-Ca-DZW"/>
             </connections>
@@ -24,19 +25,28 @@
                     <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
+                <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kU0-uP-anq">
+                    <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                    <color key="color" systemColor="opaqueSeparatorColor"/>
+                </activityIndicatorView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="kU0-uP-anq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FBc-n5-82T"/>
                 <constraint firstItem="A7p-ow-Ant" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SwO-45-gWO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="A7p-ow-Ant" secondAttribute="top" id="WB2-wn-5pj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A7p-ow-Ant" secondAttribute="trailing" id="WLu-TJ-zBr"/>
                 <constraint firstItem="A7p-ow-Ant" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="dJG-gk-l9m"/>
+                <constraint firstItem="kU0-uP-anq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dzc-Ny-wmK"/>
             </constraints>
             <point key="canvasLocation" x="36" y="-11"/>
         </view>
     </objects>
     <resources>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
