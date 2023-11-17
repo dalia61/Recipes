@@ -6,3 +6,6 @@
 //
 
 import Foundation
+enum Constants: String {
+    case apiKey = ""
+}

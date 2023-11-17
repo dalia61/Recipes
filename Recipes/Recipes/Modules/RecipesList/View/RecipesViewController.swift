@@ -8,50 +8,39 @@
 import UIKit
 
 class RecipesViewController: UIViewController {
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var recipesTableView: UITableView!
     var viewModel: RecipesListViewModel!
+    var cellViewModel: [RecipeCellViewModel] = []
     var recipes: [Recipes] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
-        viewModel?.fetchRecipes()
+        bindViewModel()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        viewModel?.fetchRecipes()
         title = "Recipes"
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-
-}
-extension RecipesViewController {
-    func bindTodayResult(recipes: [Recipes]) {
-        self.recipes = recipes
-        DispatchQueue.main.async {
-            self.recipesTableView.reloadData()
+    func bindViewModel() {
+        viewModel.isLoadingData.observe(on: self) { [weak self] isLoading in
+            DispatchQueue.main.async {
+                if isLoading {
+                    self?.activityIndicator.startAnimating()
+                } else {
+                    self?.activityIndicator.stopAnimating()
+                }
+            }
+        }
+        viewModel.recipe.observe(on: self) { [weak self] cellViewModels in
+            guard let self = self else { return }
+            self.viewModel.updateCellViewModels(cellViewModels: cellViewModels)
+            self.reloadTableView()
         }
     }
 }
-private extension RecipesViewController {
-    func configureTableView() {
-        recipesTableView.dataSource = self
-        recipesTableView.delegate = self
-        recipesTableView.registerCellNib(cellClass: RecipeTableViewCell.self)
-        recipesTableView.estimatedRowHeight = 60
-        recipesTableView.rowHeight = UITableView.automaticDimension
-    }
-}
-extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
-        func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as? RecipeTableViewCell
 
-            let recipe = viewModel.recipes[indexPath.row]
-            cell?.configure(RecipeCellViewModel(recipe: recipe))
 
-            return cell ?? UITableViewCell()
-        }
-        
-        func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return viewModel.recipes.count
-    }
-}
