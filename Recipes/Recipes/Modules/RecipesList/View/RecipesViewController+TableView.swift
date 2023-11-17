@@ -13,7 +13,7 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
         recipesTableView.dataSource = self
         recipesTableView.delegate = self
         recipesTableView.registerCellNib(cellClass: RecipeTableViewCell.self)
-        recipesTableView.estimatedRowHeight = 60
+        recipesTableView.estimatedRowHeight = 150
         recipesTableView.rowHeight = UITableView.automaticDimension
     }
     func reloadTableView() {
