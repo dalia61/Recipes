@@ -10,8 +10,8 @@ import Foundation
 class RecipesListViewModel {
     private let coordinator: RecipesListCoordinatorProtocol
     var isLoadingData: Observable<Bool> = Observable(false)
-    var data: Recipe?
     var recipe: Observable<[RecipeCellViewModel]> = Observable([])
+    var data: Recipe?
     var reloadTableView: (() -> Void)?
     let itemsPerBatch = 5
     var currentBatch = 0

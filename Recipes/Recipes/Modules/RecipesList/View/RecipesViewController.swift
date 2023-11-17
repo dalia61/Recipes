@@ -17,10 +17,10 @@ class RecipesViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         bindViewModel()
+        viewModel?.fetchData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        viewModel?.fetchData()
         title = "Recipes"
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true

@@ -21,8 +21,8 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="150" estimatedRowHeight="150" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A7p-ow-Ant">
-                    <rect key="frame" x="0.0" y="59" width="393" height="793"/>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="A7p-ow-Ant">
+                    <rect key="frame" x="0.0" y="59" width="393" height="759"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>
                 <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kU0-uP-anq">
@@ -33,11 +33,11 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="A7p-ow-Ant" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="2gW-jw-a0u"/>
                 <constraint firstItem="kU0-uP-anq" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FBc-n5-82T"/>
                 <constraint firstItem="A7p-ow-Ant" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="SwO-45-gWO"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="top" secondItem="A7p-ow-Ant" secondAttribute="top" id="WB2-wn-5pj"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="A7p-ow-Ant" secondAttribute="trailing" id="WLu-TJ-zBr"/>
-                <constraint firstItem="A7p-ow-Ant" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="dJG-gk-l9m"/>
                 <constraint firstItem="kU0-uP-anq" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dzc-Ny-wmK"/>
             </constraints>
             <point key="canvasLocation" x="36" y="-11"/>
