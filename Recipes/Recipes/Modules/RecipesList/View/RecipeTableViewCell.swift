@@ -12,6 +12,7 @@ class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var recipeDes: UITextView!
+    static let height = CGFloat(140)
     override func awakeFromNib() {
         super.awakeFromNib()
     }

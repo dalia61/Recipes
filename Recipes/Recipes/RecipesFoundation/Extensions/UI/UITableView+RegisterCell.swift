@@ -7,18 +7,19 @@
 
 import Foundation
 import UIKit
+
 extension UITableView {
     func registerCellNib<Cell: UITableViewCell>(cellClass: Cell.Type) {
-        self.register(UINib(nibName: String(describing: Cell.self),
-                            bundle: nil), forCellReuseIdentifier: String(describing: Cell.self))
-    }
-    func dequeue<Cell: UITableViewCell>() -> Cell? {
         let identifier = String(describing: Cell.self)
-        guard let cell = self.dequeueReusableCell(withIdentifier: identifier) as? Cell else {
-            return nil
+        self.register(UINib(nibName: identifier, bundle: nil), forCellReuseIdentifier: identifier)
+    }
+    
+    func dequeue<Cell: UITableViewCell>(for indexPath: IndexPath) -> Cell {
+        let identifier = String(describing: Cell.self)
+        guard let cell = self.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as? Cell else {
+            fatalError("Unable to dequeue cell with identifier: \(identifier)")
         }
         cell.selectionStyle = .none
         return cell
     }
-
 }

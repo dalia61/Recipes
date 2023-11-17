@@ -13,7 +13,7 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
         recipesTableView.dataSource = self
         recipesTableView.delegate = self
         recipesTableView.registerCellNib(cellClass: RecipeTableViewCell.self)
-        recipesTableView.estimatedRowHeight = 150
+        recipesTableView.estimatedRowHeight = RecipeTableViewCell.height
         recipesTableView.rowHeight = UITableView.automaticDimension
     }
     func reloadTableView() {
@@ -22,15 +22,26 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipeTableViewCell", for: indexPath) as? RecipeTableViewCell
+        let cell: RecipeTableViewCell = tableView.dequeue(for: indexPath)
         
         let recipe = viewModel.recipes[indexPath.row]
-        cell?.configure(RecipeCellViewModel(recipe: recipe))
+        cell.configure(RecipeCellViewModel(recipe: recipe))
         
-        return cell ?? UITableViewCell()
+        return cell
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.recipes.count
+    }
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return RecipeTableViewCell.height
+    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        
+        if offsetY > contentHeight - scrollView.frame.size.height {
+            viewModel.fetchData()
+        }
     }
 }
