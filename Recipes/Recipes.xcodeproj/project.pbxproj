@@ -312,8 +312,8 @@
 		2BC683652A857BD300A9286A /* Externals */ = {
 			isa = PBXGroup;
 			children = (
-				2B6199D52B07C33C007BD087 /* DataManager */,
 				2BC683552A85783B00A9286A /* Coordinator */,
+				2B6199D52B07C33C007BD087 /* DataManager */,
 				2BC6835C2A857B0100A9286A /* DataNetwork */,
 			);
 			path = Externals;

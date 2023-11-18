@@ -20,8 +20,9 @@ extension NetworkError {
         case .forbidden:
             return "Make sure you have permession to access this resource"
         case.somethingWentWrong:
-        return "Something went wrong, please try again later"
+            return "Something went wrong, please try again later"
         case let .custom(response):
             return response.message
-        }}}
-
+        }
+    }
+}
