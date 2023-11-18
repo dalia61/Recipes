@@ -30,20 +30,24 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
         return viewModel.recipes.value.count
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell: RecipeTableViewCell = tableView.cellForRow(at: indexPath) as! RecipeTableViewCell
+        cell.contentView.startAnimating()
+        DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + 2) {
+            cell.contentView.stopAnimating()
+        }
         viewModel.toggle(indexPath: indexPath)
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var isExpanded = viewModel.getRecipeWith(indexPath: indexPath).isExpanded 
-        var height = isExpanded ? CGFloat(300) : CGFloat(140)
-
+        let isExpanded = viewModel.getRecipeWith(indexPath: indexPath).isExpanded
+        let height: CGFloat = isExpanded ? 300.0 : 140.0
         return height
     }
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        let offsetY = scrollView.contentOffset.y
-//        let contentHeight = scrollView.contentSize.height
-//        
-//        if offsetY > contentHeight - scrollView.frame.size.height {
-//            viewModel.fetchData()
-//        }
-    }
+    // func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    //    let offsetY = scrollView.contentOffset.y
+    //    let contentHeight = scrollView.contentSize.height
+    //
+    //    if offsetY > contentHeight - scrollView.frame.size.height {
+    //        viewModel.fetchData()
+    //    }
+    // }
 }

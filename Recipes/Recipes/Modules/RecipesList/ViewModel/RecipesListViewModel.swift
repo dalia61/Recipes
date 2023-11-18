@@ -32,7 +32,6 @@ class RecipesListViewModel {
             }
             self.isLoadingData.value = false
         }
-
         func mapToRecipesViewModels(recipes: [Recipe]) -> [RecipeCellViewModel] {
             return recipes.map {
                 RecipeCellViewModel(recipe: $0)
@@ -49,5 +48,5 @@ class RecipesListViewModel {
         recipe.isExpanded = !(recipe.isExpanded)
         recipes.value[indexPath.row] = recipe
     }
-
+    
 }
