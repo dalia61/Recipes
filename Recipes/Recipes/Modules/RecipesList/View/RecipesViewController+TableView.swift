@@ -13,7 +13,6 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
         recipesTableView.dataSource = self
         recipesTableView.delegate = self
         recipesTableView.registerCellNib(cellClass: RecipeTableViewCell.self)
-        recipesTableView.estimatedRowHeight = RecipeTableViewCell.height
         recipesTableView.rowHeight = UITableView.automaticDimension
     }
     func reloadTableView() {
@@ -23,15 +22,12 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: RecipeTableViewCell = tableView.dequeue(for: indexPath)
-        
-        let recipe = viewModel.recipes[indexPath.row]
-        cell.configure(RecipeCellViewModel(recipe: recipe))
-        
+        let recipe = viewModel.recipes.value[indexPath.row]
+        cell.configure(recipe)
         return cell
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.recipes.count
+        return viewModel.recipes.value.count
     }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return RecipeTableViewCell.height

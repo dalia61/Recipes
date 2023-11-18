@@ -12,7 +12,6 @@ class RecipeCellViewModel  {
     var name: String?
     var recipeDescription: String?
     var image: String?
-    
     var isFavourite: Bool?
     
     init(recipe: Recipe) {

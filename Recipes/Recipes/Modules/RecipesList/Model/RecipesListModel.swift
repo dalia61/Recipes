@@ -6,7 +6,7 @@
 //
 
 import Foundation
-typealias Recipes = [Recipe]
+typealias RecipesResponse = [Recipe]
 struct Recipe: Codable {
     let recipeID, fats, name, time: String?
     let image: String?

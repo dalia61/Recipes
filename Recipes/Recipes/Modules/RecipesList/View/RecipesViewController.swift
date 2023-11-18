@@ -11,19 +11,17 @@ class RecipesViewController: UIViewController {
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var recipesTableView: UITableView!
     var viewModel: RecipesListViewModel!
-    var cellViewModel: [RecipeCellViewModel] = []
-    var recipes: [Recipes] = []
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         bindViewModel()
-        viewModel?.fetchData()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         title = "Recipes"
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
+        viewModel?.fetchData()
     }
     func bindViewModel() {
         viewModel.isLoadingData.observe(on: self) { [weak self] isLoading in
@@ -35,12 +33,9 @@ class RecipesViewController: UIViewController {
                 }
             }
         }
-        viewModel.recipe.observe(on: self) { [weak self] cellViewModels in
+        viewModel.recipes.observe(on: self) { [weak self] _ in
             guard let self = self else { return }
-            self.viewModel.updateCellViewModels(cellViewModels: cellViewModels)
             self.reloadTableView()
         }
     }
 }
-
-
