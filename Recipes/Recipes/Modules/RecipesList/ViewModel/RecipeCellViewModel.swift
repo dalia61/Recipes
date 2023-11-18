@@ -12,13 +12,13 @@ class RecipeCellViewModel  {
     var name: String?
     var recipeDescription: String?
     var image: String?
-    var isFavourite: Bool?
+    var isExpanded: Bool
     
     init(recipe: Recipe) {
         name = recipe.name
         recipeDescription = recipe.recipeDescription
         image = recipe.image
-        isFavourite = recipe.isFavourited
+        isExpanded = recipe.isExpanded ?? false
     }
 }
 

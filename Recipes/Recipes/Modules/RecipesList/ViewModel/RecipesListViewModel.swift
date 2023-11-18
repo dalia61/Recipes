@@ -32,10 +32,22 @@ class RecipesListViewModel {
             }
             self.isLoadingData.value = false
         }
+
         func mapToRecipesViewModels(recipes: [Recipe]) -> [RecipeCellViewModel] {
             return recipes.map {
                 RecipeCellViewModel(recipe: $0)
             }
         }
     }
+    
+    func getRecipeWith(indexPath: IndexPath) -> RecipeCellViewModel {
+        return recipes.value[indexPath.row]
+    }
+    
+    func toggle(indexPath: IndexPath) {
+        let recipe = self.recipes.value[indexPath.row]
+        recipe.isExpanded = !(recipe.isExpanded)
+        recipes.value[indexPath.row] = recipe
+    }
+
 }

@@ -25,9 +25,10 @@ struct Recipe: Codable {
     let incompatibilities: [String]?
     let deliverableIngredients: [String]?
     let undeliverableIngredients: [String]?
-    var isFavourited: Bool?
+    var isExpanded: Bool? = false
+
     enum CodingKeys: String, CodingKey {
-        case fats, name, time, image, weeks, carbos, fibers, rating, country, ratings, calories, headline, keywords, products, proteins, favorites, difficulty, isFavourited
+        case fats, name, time, image, weeks, carbos, fibers, rating, country, ratings, calories, headline, keywords, products, proteins, favorites, difficulty, isExpanded
         case recipeID = "id"
         case recipeDescription = "description"
         case highlighted, ingredients, incompatibilities

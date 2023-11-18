@@ -29,15 +29,21 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.recipes.value.count
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        viewModel.toggle(indexPath: indexPath)
+    }
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return RecipeTableViewCell.height
+        var isExpanded = viewModel.getRecipeWith(indexPath: indexPath).isExpanded 
+        var height = isExpanded ? CGFloat(300) : CGFloat(140)
+
+        return height
     }
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        let offsetY = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        
-        if offsetY > contentHeight - scrollView.frame.size.height {
-            viewModel.fetchData()
-        }
+//        let offsetY = scrollView.contentOffset.y
+//        let contentHeight = scrollView.contentSize.height
+//        
+//        if offsetY > contentHeight - scrollView.frame.size.height {
+//            viewModel.fetchData()
+//        }
     }
 }
