@@ -10,6 +10,7 @@ import UIKit
 class RecipesViewController: UIViewController {
     @IBOutlet weak var recipesTableView: UITableView!
     var viewModel: RecipesListViewModel!
+    let refreshControl = UIRefreshControl()
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
@@ -21,7 +22,7 @@ class RecipesViewController: UIViewController {
         setupNavigationBar()
         fetchDataIfNeeded()
     }
-    
+
     private func setupNavigationBar() {
         title = "Recipes"
         navigationController?.navigationBar.isHidden = false

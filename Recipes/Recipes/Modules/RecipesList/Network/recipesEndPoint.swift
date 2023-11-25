@@ -10,13 +10,10 @@ import Alamofire
 
 enum RecipeEndPoint: Endpoint {
     case recipe
-    case recipeForBatch(startIndex: Int, limit: Int)
     var path: String {
         switch self {
         case .recipe:
             return "43427003d33f1f6b51cc"
-        case .recipeForBatch(let startIndex, let limit):
-            return "your_path_for_batch_fetch_with_start_\(startIndex)_and_limit_\(limit)"
         }
     }
     var headers: HTTPHeaders {
@@ -29,7 +26,7 @@ enum RecipeEndPoint: Endpoint {
     }
     var method: HTTPMethod {
         switch self {
-        case .recipe, .recipeForBatch:
+        case .recipe:
             return .get
         }
     }

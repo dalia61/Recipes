@@ -11,8 +11,7 @@ import Kingfisher
 class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
-    @IBOutlet weak var recipeDes: UITextView!
-    
+    @IBOutlet weak var recipeToDes: UIImageView!
     var viewModel: RecipeCellViewModel?
     
     override func awakeFromNib() {
@@ -22,7 +21,7 @@ class RecipeTableViewCell: UITableViewCell {
     override func prepareForReuse() {
         recipeImage.image = nil
         recipeName.text = nil
-        recipeDes.text = nil
+        //recipeDes.text = nil
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -31,7 +30,7 @@ class RecipeTableViewCell: UITableViewCell {
     func configure(_ viewModel: RecipeCellViewModel) {
         self.viewModel = viewModel
         recipeName.text = viewModel.name
-        recipeDes.text = viewModel.recipeDescription
+        //recipeDes.text = viewModel.recipeDescription
         if let imageUrl = URL(string: viewModel.image ?? "") {
             recipeImage.kf.setImage(with: imageUrl)
         }

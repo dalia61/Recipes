@@ -359,11 +359,11 @@
 		2BC683692A857F8900A9286A /* RecipesList */ = {
 			isa = PBXGroup;
 			children = (
+				2BD2EBA32A85A2170083B7E4 /* RecipesListCoordinator.swift */,
+				2BC6836F2A85802600A9286A /* Model */,
 				2B6199D22B07C269007BD087 /* Network */,
 				2BC683702A85802C00A9286A /* View */,
-				2BC6836F2A85802600A9286A /* Model */,
 				2BC6836E2A85801E00A9286A /* ViewModel */,
-				2BD2EBA32A85A2170083B7E4 /* RecipesListCoordinator.swift */,
 			);
 			path = RecipesList;
 			sourceTree = "<group>";

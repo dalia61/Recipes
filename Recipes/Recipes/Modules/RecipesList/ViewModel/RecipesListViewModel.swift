@@ -11,7 +11,6 @@ class RecipesListViewModel {
     private let coordinator: RecipesListCoordinatorProtocol
     var isLoadingData: Observable<Bool> = Observable(false)
     var recipes: Observable<[RecipeCellViewModel]> = Observable([])
-    let itemsPerBatch = 5
     init(coordinator: RecipesListCoordinatorProtocol) {
         self.coordinator = coordinator
     }
@@ -20,7 +19,6 @@ class RecipesListViewModel {
             return
         }
         isLoadingData.value = true
-        let startIndex = recipes.value.count + 1
         let endpoint = RecipeEndPoint.recipe
         AlamofireManager.shared.callRequest([Recipe].self, endpoint: endpoint) { [weak self] result in
             guard let self = self else { return }
@@ -42,11 +40,5 @@ class RecipesListViewModel {
     func getRecipeWith(indexPath: IndexPath) -> RecipeCellViewModel {
         return recipes.value[indexPath.row]
     }
-    
-    func toggle(indexPath: IndexPath) {
-        let recipe = self.recipes.value[indexPath.row]
-        recipe.isExpanded = !(recipe.isExpanded)
-        recipes.value[indexPath.row] = recipe
-    }
-    
+
 }

@@ -19,8 +19,6 @@ class RecipesListCoordinator: Coordinator {
         let recipesViewController = RecipesViewController()
         let recipesListViewModel = RecipesListViewModel(coordinator: self)
         recipesViewController.viewModel = recipesListViewModel
-        navigationController.navigationBar.tintColor = .black
-        navigationController.navigationBar.topItem?.title = "Recipes"
         navigationController.pushViewController(recipesViewController, animated: true)
     }
 }
