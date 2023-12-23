@@ -9,19 +9,24 @@ import UIKit
 
 class RecipesViewController: UIViewController {
     @IBOutlet weak var recipesTableView: UITableView!
+
     var viewModel: RecipesListViewModel!
+<<<<<<< Updated upstream
     var recipes: [Recipes] = []
+=======
+>>>>>>> Stashed changes
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
         viewModel?.fetchRecipes()
     }
     override func viewDidAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+        super.viewDidAppear(animated)
         title = "Recipes"
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
     }
+<<<<<<< Updated upstream
 
 }
 extension RecipesViewController {
@@ -29,6 +34,34 @@ extension RecipesViewController {
         self.recipes = recipes
         DispatchQueue.main.async {
             self.recipesTableView.reloadData()
+=======
+    func bindViewModel() {
+        viewModel.isLoadingData.observe(on: self) { [weak self] isLoading in
+            DispatchQueue.main.async {
+                self?.updateLoadingIndicator(isLoading)
+            }
+        }
+        
+        viewModel.recipe.observe(on: self) { [weak self] cellViewModels in
+            guard let self = self else { return }
+            self.viewModel.updateCellViewModels(cellViewModels: cellViewModels)
+            self.reloadTableView()
+            self.recipesTableView.reloadData()
+        }
+        
+        viewModel.reloadTableView = { [weak self] in
+            self?.recipesTableView.reloadData()
+        }
+    }
+    
+    func updateLoadingIndicator(_ isLoading: Bool) {
+        if isLoading {
+            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
+        } else {
+            activityIndicator.isHidden = true
+            activityIndicator.stopAnimating()
+>>>>>>> Stashed changes
         }
     }
 }

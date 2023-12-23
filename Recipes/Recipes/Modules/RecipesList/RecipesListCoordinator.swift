@@ -7,9 +7,7 @@
 
 import Foundation
 import UIKit
-protocol RecipesListCoordinatorProtocol: AnyObject {
-    func navigateToRecipesDetails(with recipe: Recipe)
-}
+
 class RecipesListCoordinator: Coordinator {
     let navigationController: UINavigationController
     init(navigationController: UINavigationController) {
@@ -17,14 +15,10 @@ class RecipesListCoordinator: Coordinator {
     }
     func start() {
         let recipesViewController = RecipesViewController()
-        let recipesListViewModel = RecipesListViewModel(coordinator: self)
+        let recipesListViewModel = RecipesListViewModel()
         recipesViewController.viewModel = recipesListViewModel
         navigationController.navigationBar.tintColor = .black
         navigationController.navigationBar.topItem?.title = "Recipes"
         navigationController.pushViewController(recipesViewController, animated: true)
-    }
-}
-extension RecipesListCoordinator: RecipesListCoordinatorProtocol {
-    func navigateToRecipesDetails(with recipe: Recipe) {
     }
 }
