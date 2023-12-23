@@ -6,6 +6,9 @@
 //
 
 import Foundation
-enum Constants: String {
-    case apiKey = ""
-}
+<<<<<<< Updated upstream
+=======
+//enum Constants: String {
+//    case apiKey = ""
+//}
+>>>>>>> Stashed changes

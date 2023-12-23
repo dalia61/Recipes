@@ -12,6 +12,7 @@ class LoginViewController: UIViewController, LoginOutputProtocol {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var messageLabel: UILabel!
+
     var loginViewModel: LoginViewModel!
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,7 @@ class LoginViewController: UIViewController, LoginOutputProtocol {
     @IBAction func didTapLogin(_ sender: Any) {
         loginViewModel.login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
+    
     private func configureAppearance() {
         emailTextField.delegate = self
         passwordTextField.delegate = self

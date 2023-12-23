@@ -6,6 +6,8 @@
 //
 
 import Foundation
+<<<<<<< Updated upstream
+=======
 import Alamofire
 
 protocol Endpoint: URLRequestConvertible {
@@ -27,7 +29,6 @@ extension Endpoint {
     }
     var defaultHeaders: HTTPHeaders {
         var headers = HTTPHeaders()
-        headers.add(name: "Content-Type", value: "application/json")
         return headers
     }
     var defaultParams: Parameters {
@@ -54,3 +55,4 @@ extension Endpoint {
         return try encoding.encode(urlRequest, with: parameters)
     }
 }
+>>>>>>> Stashed changes

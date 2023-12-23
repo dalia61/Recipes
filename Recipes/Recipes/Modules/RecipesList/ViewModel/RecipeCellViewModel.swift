@@ -6,20 +6,19 @@
 //
 
 import Foundation
-
 class RecipeCellViewModel  {
-    
     var name: String?
     var recipeDescription: String?
     var image: String?
-    
     var isFavourite: Bool?
-    
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
     init(recipe: Recipe) {
-        name = recipe.name
-        recipeDescription = recipe.recipeDescription
-        image = recipe.image
-        isFavourite = recipe.isFavourited
+        self.name = recipe.name
+        self.recipeDescription = recipe.recipeDescription
+        self.image = recipe.image
+        self.isFavourite = recipe.isFavourited
     }
 }
-
