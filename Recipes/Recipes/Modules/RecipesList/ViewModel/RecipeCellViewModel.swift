@@ -11,10 +11,6 @@ class RecipeCellViewModel  {
     var recipeDescription: String?
     var image: String?
     var isFavourite: Bool?
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
     init(recipe: Recipe) {
         self.name = recipe.name
         self.recipeDescription = recipe.recipeDescription

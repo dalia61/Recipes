@@ -11,12 +11,8 @@ import Kingfisher
 class RecipeTableViewCell: UITableViewCell {
     @IBOutlet weak var recipeImage: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
-<<<<<<< Updated upstream
-    @IBOutlet weak var recipeDes: UITextView!
-=======
     @IBOutlet weak var recipeDes: UILabel!
     static let height = CGFloat(140)
->>>>>>> Stashed changes
     override func awakeFromNib() {
         super.awakeFromNib()
     }

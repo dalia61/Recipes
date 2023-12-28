@@ -8,12 +8,12 @@
 import Foundation
 import UIKit
 
-extension RecipesViewController: UITableViewDelegate{
-    func setupTableView(){
-        recipesTableView.delegate = self
-        self.registerCells()
-    }
-    func registerCells(){
-        recipesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
-    }
-}
+//extension RecipesViewController: UITableViewDelegate{
+//    func setupTableView(){
+//        recipesTableView.delegate = self
+//        self.registerCells()
+//    }
+//    func registerCells(){
+//        recipesTableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+//    }
+//}

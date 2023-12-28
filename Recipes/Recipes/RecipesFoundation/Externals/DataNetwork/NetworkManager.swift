@@ -46,7 +46,7 @@ class AlamofireManager: NetworkProtocol {
                 if response.response?.statusCode == 409 {
                     guard let error = try? JSONDecoder()
                         .decode(ResponseError.self, from: response.data!) else { return }
-                   print(response.response?.statusCode)
+                    print(response.response?.statusCode)
                     print("Error: \(error)")
                     completion?(.failure(NetworkError.custom(error)))
                 }else {
@@ -65,7 +65,7 @@ class AlamofireManager: NetworkProtocol {
                 do {
                     guard let statusCode = response.response?.statusCode
                     else { return }
-                    print(response.value)
+                    print(response.value!)
                     switch statusCode {
                     case 200...299:
                         let model = try JSONDecoder().decode(T.self, from: response.data!)

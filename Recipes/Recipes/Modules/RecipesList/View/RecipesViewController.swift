@@ -10,14 +10,14 @@ import UIKit
 class RecipesViewController: UIViewController {
     @IBOutlet weak var recipesTableView: UITableView!
 
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var viewModel: RecipesListViewModel!
-<<<<<<< Updated upstream
     var recipes: [Recipes] = []
-=======
->>>>>>> Stashed changes
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+        bindViewModel()
         viewModel?.fetchRecipes()
     }
     override func viewDidAppear(_ animated: Bool) {
@@ -26,15 +26,8 @@ class RecipesViewController: UIViewController {
         navigationController?.navigationBar.isHidden = false
         navigationController?.navigationBar.prefersLargeTitles = true
     }
-<<<<<<< Updated upstream
-
 }
 extension RecipesViewController {
-    func bindTodayResult(recipes: [Recipes]) {
-        self.recipes = recipes
-        DispatchQueue.main.async {
-            self.recipesTableView.reloadData()
-=======
     func bindViewModel() {
         viewModel.isLoadingData.observe(on: self) { [weak self] isLoading in
             DispatchQueue.main.async {
@@ -45,7 +38,7 @@ extension RecipesViewController {
         viewModel.recipe.observe(on: self) { [weak self] cellViewModels in
             guard let self = self else { return }
             self.viewModel.updateCellViewModels(cellViewModels: cellViewModels)
-            self.reloadTableView()
+//            self.reloadTableView()
             self.recipesTableView.reloadData()
         }
         
@@ -59,9 +52,8 @@ extension RecipesViewController {
             activityIndicator.isHidden = false
             activityIndicator.startAnimating()
         } else {
-            activityIndicator.isHidden = true
             activityIndicator.stopAnimating()
->>>>>>> Stashed changes
+            activityIndicator.isHidden = true
         }
     }
 }
@@ -83,7 +75,7 @@ extension RecipesViewController: UITableViewDataSource, UITableViewDelegate {
 
             return cell ?? UITableViewCell()
         }
-        
+
         func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
             return viewModel.recipes.count
     }

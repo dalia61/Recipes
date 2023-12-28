@@ -19,7 +19,7 @@ enum RecipeEndPoint: Endpoint {
     }
     
     var headers: HTTPHeaders {
-        var headers = defaultHeaders
+        let headers = defaultHeaders
         return headers
     }
     
