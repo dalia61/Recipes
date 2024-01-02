@@ -10,9 +10,11 @@ import UIKit
 
 class RecipesListCoordinator: Coordinator {
     let navigationController: UINavigationController
+    
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
+    
     func start() {
         let recipesViewController = RecipesViewController()
         let recipesListViewModel = RecipesListViewModel()

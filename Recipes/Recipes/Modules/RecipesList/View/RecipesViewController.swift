@@ -17,7 +17,7 @@ class RecipesViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         bindViewModel()
-        viewModel?.fetchRecipes()
+        viewModel.fetchRecipes()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)

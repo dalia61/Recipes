@@ -13,7 +13,6 @@
             <connections>
                 <outlet property="emailTextField" destination="9MH-dl-rkM" id="VtW-bp-6aD"/>
                 <outlet property="loginButton" destination="ecL-0R-cEU" id="QSA-RA-0sK"/>
-                <outlet property="messageLabel" destination="ycn-9h-kWK" id="LVZ-sQ-gzR"/>
                 <outlet property="passwordTextField" destination="Iqk-hO-Atv" id="nRV-o8-G4a"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -46,8 +45,8 @@
                                         </label>
                                     </subviews>
                                 </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="GKF-Ab-6j0">
-                                    <rect key="frame" x="20" y="154" width="390" height="50"/>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="14" translatesAutoresizingMaskIntoConstraints="NO" id="GKF-Ab-6j0">
+                                    <rect key="frame" x="20" y="154" width="390" height="114"/>
                                     <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email or phone number" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9MH-dl-rkM">
                                             <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
@@ -57,19 +56,8 @@
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
                                             <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="email"/>
                                         </textField>
-                                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter a valid email address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycn-9h-kWK">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="0.0"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                            <color key="textColor" systemColor="systemRedColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </stackView>
-                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cER-vb-T1H">
-                                    <rect key="frame" x="20" y="229" width="390" height="50"/>
-                                    <subviews>
                                         <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iqk-hO-Atv">
-                                            <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
+                                            <rect key="frame" x="0.0" y="64" width="390" height="50"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="50" id="lIo-wb-pxs"/>
                                             </constraints>
@@ -78,7 +66,7 @@
                                         </textField>
                                     </subviews>
                                 </stackView>
-                                <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecL-0R-cEU">
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ecL-0R-cEU">
                                     <rect key="frame" x="25" y="709" width="380" height="55"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="55" id="PuI-D7-i0c"/>
@@ -95,11 +83,7 @@
                             <constraints>
                                 <constraint firstAttribute="trailing" secondItem="ecL-0R-cEU" secondAttribute="trailing" constant="25" id="1Md-Cw-eOM"/>
                                 <constraint firstAttribute="trailing" secondItem="YiA-2H-Wuv" secondAttribute="trailing" constant="20" id="Bgq-eQ-wtK"/>
-                                <constraint firstItem="cER-vb-T1H" firstAttribute="leading" secondItem="hfV-M3-yTM" secondAttribute="leading" constant="20" id="H8G-6m-Pxv"/>
-                                <constraint firstAttribute="trailing" secondItem="cER-vb-T1H" secondAttribute="trailing" constant="20" id="UG7-Vr-gwH"/>
-                                <constraint firstItem="ecL-0R-cEU" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cER-vb-T1H" secondAttribute="bottom" constant="40" id="Wwf-IW-4aA"/>
                                 <constraint firstItem="YiA-2H-Wuv" firstAttribute="leading" secondItem="hfV-M3-yTM" secondAttribute="leading" constant="20" id="daa-EB-s4M"/>
-                                <constraint firstItem="cER-vb-T1H" firstAttribute="top" secondItem="GKF-Ab-6j0" secondAttribute="bottom" constant="25" id="f3c-P5-4aW"/>
                                 <constraint firstItem="GKF-Ab-6j0" firstAttribute="leading" secondItem="hfV-M3-yTM" secondAttribute="leading" constant="20" id="h7h-Dp-5lX"/>
                                 <constraint firstAttribute="bottom" secondItem="ecL-0R-cEU" secondAttribute="bottom" constant="75" id="hOn-Q2-T5Q"/>
                                 <constraint firstAttribute="trailing" secondItem="GKF-Ab-6j0" secondAttribute="trailing" constant="20" id="j7d-bh-KiF"/>
@@ -127,7 +111,7 @@
                 <constraint firstItem="hfV-M3-yTM" firstAttribute="width" secondItem="fnl-2z-Ty3" secondAttribute="width" id="pTb-0k-G4i"/>
                 <constraint firstItem="QVQ-HZ-OgT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="u8n-iU-ToZ"/>
             </constraints>
-            <point key="canvasLocation" x="76" y="-11"/>
+            <point key="canvasLocation" x="75.348837209302332" y="-11.587982832618026"/>
         </view>
     </objects>
     <resources>
@@ -136,9 +120,6 @@
         </systemColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemRedColor">
-            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
