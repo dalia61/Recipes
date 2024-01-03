@@ -17,7 +17,7 @@ class RecipesViewController: UIViewController {
         super.viewDidLoad()
         configureTableView()
         bindViewModel()
-        viewModel?.fetchRecipes()
+        viewModel.fetchRecipes()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -29,7 +29,7 @@ class RecipesViewController: UIViewController {
 extension RecipesViewController {
     func bindViewModel() {
         viewModel.isLoadingData.observe(on: self) { [weak self] isLoading in
-            DispatchQueue.main.async {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 self?.updateLoadingIndicator(isLoading)
             }
         }
@@ -43,7 +43,7 @@ extension RecipesViewController {
     
     func updateLoadingIndicator(_ isLoading: Bool) {
         if isLoading {
-            activityIndicator.isHidden = false
+            activityIndicator.startAnimating()
         } else {
             activityIndicator.stopAnimating()
         }

@@ -7,33 +7,65 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, LoginOutputProtocol {
+class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var messageLabel: UILabel!
-
-    var loginViewModel: LoginViewModel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    var coordinator: LoginCoordinator?
+    var loginViewModel: LoginViewModel! {
+        didSet {
+            bindViewModel()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configureAppearance()
-    }
-    @IBAction func didTapLogin(_ sender: Any) {
-        loginViewModel.login(email: emailTextField.text ?? "", password: passwordTextField.text ?? "")
     }
     
     private func configureAppearance() {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         passwordTextField.enablePasswordToggle()
-        loginButton.isEnabled = false
     }
-    func configureButtonEnabled(onEnabled: Bool) {
-        loginButton.isEnabled = onEnabled
+    
+    @IBAction func didTapLogin(_ sender: Any) {
+        activityIndicator.startAnimating()
+        loginViewModel.login()
     }
-    func handelFieldState(error: String?) {
-        messageLabel.isHidden = error == nil
-        messageLabel.text = error
+    
+    private func bindViewModel() {
+        loginViewModel.alertMessage.observe(on: self) { [weak self] message in
+            guard let self = self, let message = message else { return }
+            DispatchQueue.main.async {
+                self.showAlert(withTitle: "Error", withMessage: message)
+                //self?.updateLoadingIndicator(isLoading)
+            }
+        }
+        loginViewModel.isLoading.observe(on: self) { [weak self] isLoading in
+            DispatchQueue.main.async {
+                self?.updateLoadingIndicator(isLoading)
+            }
+        }
+    }
+    
+    func updateLoadingIndicator(_ isLoading: Bool) {
+        guard let indicator = activityIndicator else { return }
+        if isLoading {
+            indicator.startAnimating()
+        } else {
+            if indicator.isAnimating {
+                indicator.stopAnimating()
+            }
+        }
+    }
+    
+    func showAlert(withTitle title: String, withMessage message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let cancel = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+        alert.addAction(cancel)
+        self.present(alert, animated: true)
     }
 }
 extension LoginViewController: UITextFieldDelegate {
@@ -51,6 +83,7 @@ extension LoginViewController: UITextFieldDelegate {
             assertionFailure("Unexpected text field: \(textField)")
         }
     }
+    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField == passwordTextField {
             if let button = textField.rightView as? UIButton {
@@ -58,10 +91,10 @@ extension LoginViewController: UITextFieldDelegate {
             }
         }
     }
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         emailTextField.endEditing(true)
         passwordTextField.endEditing(true)
         return true
     }
 }
-
