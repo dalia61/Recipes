@@ -65,7 +65,7 @@ Here are some screenshots from the app:
 
 - **Login Screen [Valid Data]**
   
-![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-12 at 04 44 14]https://github.com/dalia61/Recipes/blob/main/Recipes/Recipes/RecipesFoundation/Resources/Assets.xcassets/Simulator%20Screenshot%20-%20iPhone%2014%20-%202024-01-03%20at%2011.45.44.png()
+![Simulator Screenshot - iPhone 14 Pro Max - 2023-08-12 at 04 44 14](https://github.com/dalia61/Recipes/blob/main/Recipes/Recipes/RecipesFoundation/Resources/Assets.xcassets/Simulator%20Screenshot%20-%20iPhone%2014%20-%202024-01-03%20at%2011.45.44.png)
 
 - **Recipe Details Screen**
   
