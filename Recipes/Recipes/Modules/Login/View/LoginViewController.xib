@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="Recipes" customModuleProvider="target">
             <connections>
+                <outlet property="activityIndicator" destination="dKe-og-TRx" id="6tO-pc-lLS"/>
                 <outlet property="emailTextField" destination="9MH-dl-rkM" id="VtW-bp-6aD"/>
                 <outlet property="loginButton" destination="ecL-0R-cEU" id="QSA-RA-0sK"/>
                 <outlet property="passwordTextField" destination="Iqk-hO-Atv" id="nRV-o8-G4a"/>
@@ -28,6 +29,9 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hfV-M3-yTM">
                             <rect key="frame" x="0.0" y="0.0" width="430" height="839"/>
                             <subviews>
+                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="dKe-og-TRx">
+                                    <rect key="frame" x="196.66666666666666" y="401" width="37" height="37"/>
+                                </activityIndicatorView>
                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="YiA-2H-Wuv">
                                     <rect key="frame" x="20" y="20" width="390" height="84"/>
                                     <subviews>
@@ -77,6 +81,9 @@
                                         <color key="baseForegroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="baseBackgroundColor" red="0.12156862745098039" green="0.80000000000000004" blue="0.47450980392156861" alpha="1" colorSpace="calibratedRGB"/>
                                     </buttonConfiguration>
+                                    <connections>
+                                        <action selector="didTapLogin:" destination="-1" eventType="touchUpInside" id="Pzs-co-Ty3"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -90,6 +97,8 @@
                                 <constraint firstItem="GKF-Ab-6j0" firstAttribute="top" secondItem="YiA-2H-Wuv" secondAttribute="bottom" constant="50" id="omy-wg-An5"/>
                                 <constraint firstItem="ecL-0R-cEU" firstAttribute="leading" secondItem="hfV-M3-yTM" secondAttribute="leading" constant="25" id="tdm-hO-9B0"/>
                                 <constraint firstItem="YiA-2H-Wuv" firstAttribute="top" secondItem="hfV-M3-yTM" secondAttribute="top" constant="20" id="xki-ve-hRq"/>
+                                <constraint firstItem="dKe-og-TRx" firstAttribute="centerX" secondItem="hfV-M3-yTM" secondAttribute="centerX" id="y0f-dI-DOD"/>
+                                <constraint firstItem="dKe-og-TRx" firstAttribute="centerY" secondItem="hfV-M3-yTM" secondAttribute="centerY" id="zey-zX-cUx"/>
                             </constraints>
                         </view>
                     </subviews>

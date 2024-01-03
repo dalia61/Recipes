@@ -11,7 +11,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var coordinator: LoginCoordinator?
     var loginViewModel: LoginViewModel! {
         didSet {
@@ -31,15 +31,32 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func didTapLogin(_ sender: Any) {
+        activityIndicator.startAnimating()
         loginViewModel.login()
     }
     
     private func bindViewModel() {
         loginViewModel.alertMessage.observe(on: self) { [weak self] message in
             guard let self = self, let message = message else { return }
-            
             DispatchQueue.main.async {
                 self.showAlert(withTitle: "Error", withMessage: message)
+                //self?.updateLoadingIndicator(isLoading)
+            }
+        }
+        loginViewModel.isLoading.observe(on: self) { [weak self] isLoading in
+            DispatchQueue.main.async {
+                self?.updateLoadingIndicator(isLoading)
+            }
+        }
+    }
+    
+    func updateLoadingIndicator(_ isLoading: Bool) {
+        guard let indicator = activityIndicator else { return }
+        if isLoading {
+            indicator.startAnimating()
+        } else {
+            if indicator.isAnimating {
+                indicator.stopAnimating()
             }
         }
     }
@@ -50,7 +67,6 @@ class LoginViewController: UIViewController {
         alert.addAction(cancel)
         self.present(alert, animated: true)
     }
-    
 }
 extension LoginViewController: UITextFieldDelegate {
     func textFieldDidEndEditing(_ textField: UITextField) {
@@ -59,6 +75,9 @@ extension LoginViewController: UITextFieldDelegate {
         case emailTextField:
             loginViewModel?.updateEmail(text)
         case passwordTextField:
+            if let button = textField.rightView as? UIButton {
+                button.alpha = 0.0
+            }
             loginViewModel?.updatePassword(text)
         default:
             assertionFailure("Unexpected text field: \(textField)")
@@ -74,19 +93,8 @@ extension LoginViewController: UITextFieldDelegate {
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
+        emailTextField.endEditing(true)
+        passwordTextField.endEditing(true)
         return true
-    }
-}
-private extension LoginViewController {
-    func eyeIconVisible (_ textField: UITextField) {
-        if let button = textField.rightView as? UIButton {
-            button.alpha = 1.0
-        }
-    }
-    func eyeIconTransparent (_ textField: UITextField) {
-        if let button = textField.rightView as? UIButton {
-            button.alpha = 0.0
-        }
     }
 }
